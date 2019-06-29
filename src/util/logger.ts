@@ -1,7 +1,6 @@
 import { createLogger, format, LoggerOptions, transports } from 'winston';
 
 const options: LoggerOptions = {
-  // defaultMeta: { service: 'user-service' },
   format: format.json(),
   level: process.env.NODE_ENV === 'production' ? 'info' : 'debug',
   transports: [
