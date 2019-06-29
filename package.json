@@ -2,13 +2,13 @@
   "name": "cloud-web-pos-back",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "npm run serve",
     "debug": "npm run build && npm run watch-debug",
     "build": "npm run build-sass && npm run build-ts && npm run tslint && npm run copy-static-assets",
     "clean": "rm -rf dist",
-    "serve": "npm install -g node-sass && npm run build && node dist/server.js",
+    "serve": "npm run build && node dist/server.js",
     "tslint": "tslint -c tslint.json -p tsconfig.json",
     "build-ts": "tsc",
     "watch-ts": "tsc -w",
@@ -47,5 +47,8 @@
     "ts-node": "^8.3.0",
     "tslint": "^5.18.0",
     "typescript": "^3.5.2"
+  },
+  "engines": {
+    "node": "10.x"
   }
 }
