@@ -14,4 +14,7 @@ export const other = (
   res: Response,
 ) => {
   log.debug('other');
+  res.send({
+    name : 'hansol',
+  });
 };

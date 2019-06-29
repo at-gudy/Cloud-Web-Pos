@@ -2,9 +2,8 @@ import app from './app';
 import logger from './util/logger';
 
 const server = app.listen(app.get('port'), () => {
-// tslint:disable-next-line: no-console
-  logger.debug('server started port : ' + process.env.PORT);
-  logger.debug('hello');
+  logger.debug('Server Environment : ' + process.env.NODE_ENV);
+  logger.debug('Server Port : ' + process.env.PORT);
 });
 
 export default server;

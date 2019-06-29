@@ -15,7 +15,8 @@
                 "multiline": "always",
                 "singleline": "never"
             }
-        ]
+        ],
+        "interface-name":false
     },
     "rulesDirectory": []
 }
