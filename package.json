@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run serve",
     "debug": "npm run build && npm run watch-debug",
-    "build": "npm run build-sass && npm run build-ts && npm run tslint && npm run copy-static-assets",
+    "build": "npm run build-sass && npm run build-ts && npm run tslint",
     "clean": "rm -rf dist",
     "serve": "npm run build && node dist/server.js",
     "tslint": "tslint -c tslint.json -p tsconfig.json",
@@ -15,8 +15,7 @@
     "build-sass": "node-sass src/public/css/main.scss dist/public/css/main.css",
     "watch-sass": "node-sass -w src/public/css/main.scss dist/public/css/main.css",
     "serve-debug": "nodemon --inspect dist/server.js -e js,hbs",
-    "watch-debug": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-sass\" \"npm run watch-ts\" \"npm run serve-debug\"",
-    "copy-static-assets": "ts-node tools/copyStaticAssets.ts"
+    "watch-debug": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-sass\" \"npm run watch-ts\" \"npm run serve-debug\""
   },
   "author": "winetree94",
   "license": "MIT",
@@ -41,9 +40,8 @@
     "@types/shelljs": "^0.8.5",
     "@types/winston": "^2.4.4",
     "concurrently": "^4.1.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.12.0",
     "nodemon": "^1.19.1",
-    "shelljs": "^0.8.3",
     "ts-node": "^8.3.0",
     "tslint": "^5.18.0",
     "typescript": "^3.5.2"
