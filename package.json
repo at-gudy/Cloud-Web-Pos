@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run serve",
     "debug": "npm run build && npm run watch-debug",
-    "build": "npm run build-sass && npm run build-ts && npm run tslint && npm run copy-static-assets",
+    "build": "npm rebuild node-sass && npm run build-sass && npm run build-ts && npm run tslint && npm run copy-static-assets",
     "clean": "rm -rf dist",
     "serve": "npm run build && node dist/server.js",
     "tslint": "tslint -c tslint.json -p tsconfig.json",
