@@ -9,6 +9,9 @@ import log from './util/logger';
 // Load Environment Variables
 dotenv.config({ path: '.env' });
 
+export const env: string = process.env.NODE_ENV || 'development';
+export const port: string = process.env.PORT || '3000';
+
 // View Engine
 const viewEngine = 'hbs';
 // View Path
@@ -23,11 +26,11 @@ log.debug('View Path : ' + viewsPath);
 log.debug('View Partials Path : ' + partialsPath);
 log.debug('Public Directory Path : ' + publicPath);
 
-const app = express();
+export const app = express();
 
 hbs.registerPartials(partialsPath);
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', port);
 app.set('view engine', viewEngine);
 app.set('views', viewsPath);
 app.use(express.static(publicPath));

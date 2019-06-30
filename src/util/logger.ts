@@ -1,8 +1,9 @@
 import { createLogger, format, LoggerOptions, transports } from 'winston';
+import { env, port } from '../app';
 
 const options: LoggerOptions = {
   format: format.json(),
-  level: process.env.NODE_ENV === 'production' ? 'info' : 'debug',
+  level: env === 'production' ? 'info' : 'debug',
   transports: [
     new transports.File({ filename: 'log/debug.log', level: 'debug' }),
   ],
