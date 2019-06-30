@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "npm run serve",
+    "start": "npm install && npm run serve",
     "debug": "npm run build && npm run watch-debug",
     "build": "npm run build-sass && npm run build-ts && npm run tslint",
     "clean": "rm -rf dist",
