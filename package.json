@@ -1,10 +1,14 @@
 {
   "name": "cloud-web-pos-back",
   "version": "1.0.0",
-  "description": "",
+  "description": "cwp bachend",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/winetree94/Cloud-Web-Pos"
+  },
   "main": "server.js",
   "scripts": {
-    "start": "npm install && npm run serve",
+    "start": "npm run serve",
     "debug": "npm run build && npm run watch-debug",
     "build": "npm run build-sass && npm run build-ts && npm run tslint",
     "clean": "rm -rf dist",
