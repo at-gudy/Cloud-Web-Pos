@@ -1,5 +1,5 @@
 interface LoggerOption {
-  env: 'development' | 'production';
+  env: "development" | "production";
 }
 
 class Logger {
@@ -13,7 +13,7 @@ class Logger {
   }
 
   public debug(...items: any): void {
-    if (this.option.env === 'development') {
+    if (this.option.env === "development") {
       items.forEach((item: any): void => {
         // tslint:disable-next-line: no-console
         console.debug(item);
@@ -24,5 +24,12 @@ class Logger {
 }
 
 const logger: Logger = new Logger({
-  env: 'development',
+  env: "development",
 });
+
+const form = document.querySelector<"form">("form");
+if (form) {
+  form.addEventListener("submit", (e) => {
+    logger.debug(e);
+  });
+}

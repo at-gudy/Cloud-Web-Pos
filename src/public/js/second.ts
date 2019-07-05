@@ -1,2 +1,2 @@
-logger.debug('dsflk');
-logger.debug({ dslk: 'dsf' });
+logger.debug("dsflk");
+logger.debug({ dslk: "dsf" });

@@ -7,7 +7,7 @@
     "rules": {
         "quotemark": [
             true,
-            "single"
+            "double"
         ],
         "trailing-comma": [
             true,

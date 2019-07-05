@@ -1,43 +1,43 @@
-import bodyParser from 'body-parser';
-import dotenv from 'dotenv';
-import express from 'express';
-import hbs from 'hbs';
-import path from 'path';
-import * as homeController from './controllers/home';
-import log from './util/logger';
+import bodyParser from "body-parser";
+import dotenv from "dotenv";
+import express from "express";
+import hbs from "hbs";
+import path from "path";
+import * as homeController from "./controllers/home";
+import log from "./util/logger";
 
 // Load Environment Variables
-dotenv.config({ path: '.env' });
+dotenv.config({ path: ".env" });
 
-export const env: string = process.env.NODE_ENV || 'development';
-export const port: string = process.env.PORT || '3000';
+export const env: string = process.env.NODE_ENV || "development";
+export const port: string = process.env.PORT || "3000";
 
 // View Engine
-const viewEngine = 'hbs';
+const viewEngine = "hbs";
 // View Path
-const viewsPath = path.join(__dirname, '../views');
+const viewsPath = path.join(__dirname, "../views");
 // View Partial Path
-const partialsPath = path.join(__dirname, '../views', './partials');
+const partialsPath = path.join(__dirname, "../views", "./partials");
 // Public Contents Path
-const publicPath = path.join(__dirname, './public');
+const publicPath = path.join(__dirname, "./public");
 
-log.debug('View Engine : ' + viewEngine);
-log.debug('View Path : ' + viewsPath);
-log.debug('View Partials Path : ' + partialsPath);
-log.debug('Public Directory Path : ' + publicPath);
+log.debug("View Engine : " + viewEngine);
+log.debug("View Path : " + viewsPath);
+log.debug("View Partials Path : " + partialsPath);
+log.debug("Public Directory Path : " + publicPath);
 
 export const app = express();
 
 hbs.registerPartials(partialsPath);
 
-app.set('port', port);
-app.set('view engine', viewEngine);
-app.set('views', viewsPath);
+app.set("port", port);
+app.set("view engine", viewEngine);
+app.set("views", viewsPath);
 app.use(express.static(publicPath));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/', homeController.index);
-app.get('/other', homeController.other);
+app.get("/", homeController.index);
+app.get("/other", homeController.other);
 
 export default app;
