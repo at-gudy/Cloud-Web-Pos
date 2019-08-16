@@ -9,4 +9,6 @@ COPY src /workspace
 COPY tools /workspace
 COPY views /workspace
 
+RUN npm run build
+
 ENTRYPOINT npm run serve
