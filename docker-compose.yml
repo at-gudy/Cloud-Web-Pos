@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  nginx:
+    image: winetree94/cloud-web-pos
+    container_name: cloud-web-pos
+    ports:
+      - 3000:3000
