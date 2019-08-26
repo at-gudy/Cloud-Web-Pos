@@ -5,4 +5,4 @@ jobs:
       - image: circleci/node:4.8.2 # primary container
     steps:
       - checkout # checkout the code primary directory
-      - run echo "Hello World!" # run the echo command
+      - run: echo "Hello World!" # run the echo command
